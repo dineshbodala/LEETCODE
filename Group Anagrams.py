@@ -14,7 +14,7 @@ class Solution(object):
             x[tuple(count)].append(i)
         return x.values()
 
-#After few hours of brain storming aand youtube references coded an ideal solution
+#After few hours of brain storming and youtube references coded an ideal solution
 import collections
 class Solution(object):
     def groupAnagrams(self, strs):       
