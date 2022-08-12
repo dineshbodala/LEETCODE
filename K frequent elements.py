@@ -2,7 +2,7 @@
 
 
 
-#Attempt-1 7/27 testcases Passed
+#Attempt-1 7/21 testcases Passed
 
 class Solution(object):
     def topKFrequent(self, nums, k):
@@ -30,4 +30,45 @@ class Solution(object):
                 n2=i
         return n1,n2
                 
-            
+#Attempt-2 7/21 testcases Passed 
+
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        m1, m2=0,0
+        if len(nums)==1:
+            return [nums[0]]
+        elif len(nums)==2 and nums[0]==nums[1]:
+            return [nums[0]]
+        elif len(nums)==2:
+            return [nums[0], nums[1]]
+        else:
+            x=[]
+            for i in nums:
+                x.append(nums.count(i))
+            x=sorted(list(set(x)))
+            for i in nums:
+                if nums.count(i)==x[-1]:
+                    m1=i
+                elif nums.count(i)==x[-2]:
+                    m2=i
+            return [m1,m2]
+
+
+#Attempt-5 All testcases passed
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        x={}
+        count=[[] for i in range(len(nums)+1)]
+        for i in nums:
+            x[i]=1+x.get(i,0)
+        for n,c in x.items():
+            count[c].append(n)
+        sol=[]
+        for i in range(len(count)-1, 0, -1):
+            for c in count[i]:
+                sol.append(c)
+            if len(sol)==k:
+                return sol
+        
+                    
+                
