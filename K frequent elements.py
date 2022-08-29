@@ -1,9 +1,6 @@
 #Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
 
-
-
 #Attempt-1 7/21 testcases Passed
-
 class Solution(object):
     def topKFrequent(self, nums, k):
         m1, m2=0,0
@@ -29,9 +26,8 @@ class Solution(object):
             elif nums.count(i)==m2:
                 n2=i
         return n1,n2
-                
-#Attempt-2 7/21 testcases Passed 
 
+#Attempt-2 7/21 testcases Passed 
 class Solution(object):
     def topKFrequent(self, nums, k):
         m1, m2=0,0
@@ -52,7 +48,6 @@ class Solution(object):
                 elif nums.count(i)==x[-2]:
                     m2=i
             return [m1,m2]
-
 
 #Attempt-5 All testcases passed
 class Solution(object):
