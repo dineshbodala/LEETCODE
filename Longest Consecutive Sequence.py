@@ -18,5 +18,21 @@ class Solution:
             else:
                 maxc=max(c,maxc)
         return max(c,maxc)
+
+#All testcases passed
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        x=set(nums)
+        cntr=0
+        length=0
+        for  i in nums:
+            if i-1 not in x:
+                length=0
+                while i+length in x:
+                    length+=1
+            cntr=max(length,cntr)
+        return cntr
+            
+                
             
             
