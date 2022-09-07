@@ -16,5 +16,19 @@ class Solution(object):
                 if sum < 0:
                     sum = 0
             return maximum
+
+
+    def maxSubArray(self, nums: List[int]) -> int:
+        s=0
+        ms=-99999
+        for i in nums:
+            s+=i
+            if s>ms:
+                ms=s
+            if s<0:
+                s=0
+        return ms
+                
+        
             
         
