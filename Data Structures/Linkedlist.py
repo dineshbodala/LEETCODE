@@ -21,6 +21,17 @@ class linkedlist:
                 n.ref=new_node
                 break
             n=n.ref
+    #1->2->3 
+    #3->2->1
+    def reverse(self):
+        n=self.head
+        prev=None
+        while n:
+            nxt=n.ref
+            n.ref=prev
+            prev=n
+            n=nxt
+        self.head=prev
 
     def print_data(self):
         n=self.head
@@ -28,10 +39,13 @@ class linkedlist:
             print(n.data)
             n=n.ref
 
+    
+
 ll1=linkedlist()
 ll1.add_begin(2)
 ll1.add_begin(3)
 ll1.add_end(7)
+ll1.reverse()
 ll1.print_data()
 
         
