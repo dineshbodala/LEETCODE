@@ -8,5 +8,15 @@ class Solution:
             return True
         else:
             return False
+
+#method 2
+n=12
+r=0
+y=0
+while n>0:
+    y=n%10
+    r=r*10+y
+    n=n//10
+print(r)
         
         
