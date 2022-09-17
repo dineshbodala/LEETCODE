@@ -65,5 +65,23 @@ class Solution(object):
             if len(sol)==k:
                 return sol
         
-                    
+
+#Attempt 6 All testcases passed
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        x={}
+        y=[]
+        z=[]
+        for i in nums:
+                x[i]=1+x.get(i,0)
+        for i in x:
+            y.append(x[i])
+        y.sort()
+        y=y[-1:-k-1:-1]
+        for i in x:
+            if x[i] in y:
+                z.append(i)
+        return z
+            
+            
                 
