@@ -15,6 +15,6 @@ class Solution(object):
                     maxc=max(c,maxc)
                     c=0
                     break
-        return max(maxc,c)
+        return maxc
                 
             
