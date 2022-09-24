@@ -20,3 +20,19 @@ class Solution:
                 ord('a') <= ord(c) <= ord('z') or
                 ord('0') <= ord(c) <= ord('9')) 
  
+#own solution
+ class Solution(object):
+    def isPalindrome(self, s):
+        s=s.lower()
+        Strarr=[chr(i) for i in range(ord('a'), ord('z')+1)]
+        for i in range(0,10):
+            Strarr.append(str(i))
+        newstr=''
+        for i in s:
+            if i in Strarr:
+                newstr+=i
+        if newstr==newstr[-1::-1]:
+            return True
+        return False
+        
+        
