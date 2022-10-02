@@ -16,3 +16,30 @@ def printFirstNegativeInteger( A, N, K):
             negarr.append(0)
     return negarr 
 
+
+#All Passed
+#Burra Vaadali Guru
+def printFirstNegativeInteger(arr, n, k):
+    i=0
+    j=0
+    negarr=[]
+    result=[]
+    while j<n:
+        if arr[j]<0:
+            negarr.append(arr[j])
+        
+        if j-i+1 < k:
+            j+=1
+            
+        elif j-i+1==k:
+            if len(negarr)==0:
+                result.append(0)
+            else:
+                result.append(negarr[0])
+                if arr[i]==negarr[0]:
+                    negarr.pop(0)
+            i+=1
+            j+=1
+    return result
+                
+                
