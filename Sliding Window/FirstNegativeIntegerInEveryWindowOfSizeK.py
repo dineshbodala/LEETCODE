@@ -42,4 +42,4 @@ def printFirstNegativeInteger(arr, n, k):
             j+=1
     return result
                 
-                
+

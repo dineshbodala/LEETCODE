@@ -2,6 +2,21 @@
 # You can only see the k numbers in the window. Each time the sliding window moves right by one position.
 #Return the max sliding window.
 
+#Bruteforce sol
+class Solution:
+
+    def max_of_subarrays(self,arr,n,k):
+        result=[]
+        for i in range(n-k+1):
+            for j in range(i,i+k):
+                result.append(max(arr[i:i+k]))
+                break
+        return result
+        
+        
+        
+
+
 class Solution(object):
     def maxSlidingWindow(self, nums, k):
         if len(nums)==1:
@@ -20,6 +35,25 @@ class Solution(object):
                 
         return maxarr
                 
+            
+        
+ #7/271 passed       
+class Solution:
+    def max_of_subarrays(self,arr,n,k):
+        i=0
+        j=0
+        cmax=-9999
+        result=[]
+        while j<n:
+            if cmax<arr[j]:
+                cmax=arr[j]
+            if j-i+1<k:
+                j+=1
+            elif j-i+1==k:
+                result.append(cmax)
+                j+=1
+                i+=1
+        return result
             
         
         
